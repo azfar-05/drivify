@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="">
+        <div class="logo">
+            <img src="images/drivify_logo.png" alt="Drivify" />
+            <h1>Drivify</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <div class="get-started">
+        <h2>Let's get started</h2>
+        <h3>What are you looking for?</h3>
+
+        <!-- Form Section -->
+        <form action="results.html" method="POST" id="vehicleForm">
+            <div class="form-group">
+                <!-- Price Range -->
+                <label for="priceRange">Price Range:</label>
+                <select id="priceRange" name="priceRange" required>
+                    <option value="" disabled selected>Select Price Range</option>
+                    <option value="under-5-lakh">Under 5 Lakh</option>
+                    <option value="5-10-lakh">5 - 10 Lakh</option>
+                    <option value="10-20-lakh">10 - 20 Lakh</option>
+                    <option value="above-20-lakh">Above 20 Lakh</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <!-- Fuel Type -->
+                <label for="fuelType">Fuel Type:</label>
+                <select id="fuelType" name="fuelType" required>
+                    <option value="" disabled selected>Select Fuel Type</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                </select>
+            </div>
+        
+            <div class="form-group">
+                <!-- Fuel Capacity -->
+                <label for="fuelCapacity">Fuel Capacity (liters):</label>
+                <input type="number" id="fuelCapacity" name="fuelCapacity" placeholder="Enter capacity in liters" required>
+            </div>
+            <div class="form-group">
+                <!-- Mileage -->
+                <label for="mileage">Mileage:</label>
+                <input type="number" id="mileage" name="mileage" placeholder="Enter mileage per litre" required>
+            </div>
+        
+            <div class="form-group">
+                <!-- Range -->
+                <label for="range">Range (km):</label>
+                <input type="number" id="range" name="range" placeholder="Enter range in kilometers" required>
+            </div>
+        
+            <div class="form-group">
+                <!-- Seating Capacity -->
+                <label for="seats">Seating Capacity:</label>
+                <input type="number" id="seats" name="seats" placeholder="Enter number of seats" required>
+            </div>
+            
+        
+            <div class="form-submit">
+                <!-- Submit Button -->
+                <button type="submit">Search</button>
+            </div>
+        </form>
+        
+        
+        
+    </div>
+    <div id="displayArea"></div>
+    <footer id="footer">
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>
