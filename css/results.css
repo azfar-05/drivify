@@ -1,0 +1,265 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #B6D3E3;
+    text-align: center;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #3A6275;
+    color: black;
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Ensures the header stays at the top */
+    z-index: 1000; /* Keeps the header above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow for visibility */
+}
+
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #B6D3E3;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #B6D3E3;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #003044;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    border-color: #909090;
+    border-style:dashed;
+}
+
+
+/* Main Section */
+main {
+    padding: 20px;
+}
+
+main h3 {
+    margin-bottom: 15px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #003044;
+}
+
+/* Filter Section */
+.button-container {
+    display: flex;
+    gap: 20px; /* Optional: to add space between buttons */
+    justify-content: center; /* Optional: to center the buttons horizontally */
+}
+
+.filter-toggle-button,
+.go-back-button {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    background-color: #003044;
+    color: #B6D3E3;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-toggle-button:hover,
+.go-back-button:hover {
+    background-color: #3A6275;
+    color: #003044;
+}
+
+
+.filter-section {
+    display: none; /* Hidden by default */
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    display: grid;
+    background-color: #003044;
+    border: 2px solid #3A6275;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.filter-section h3 {
+    margin-top: 0;
+    color: #B6D3E3;
+}
+
+.filter-section div {
+    margin-bottom: 10px;
+}
+
+.filter-section label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #B6D3E3;
+}
+
+.filter-section select {
+    width: 100%;
+    border-radius: 5px;
+    color: #003044;
+    padding: 8px;
+    border: 3px solid #B6D3E3;
+    font-size: 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+
+}
+
+.filter-section button {
+    background-color: #B6D3E3;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #003044;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.filter-section button:hover {
+    background-color: #3A6275;
+    color: #B6D3E3;
+}
+
+/* Flexbox for side-by-side inputs */
+.filter-row {
+    display: flex;
+    gap: 10px; /* Optional: to add space between inputs */
+}
+
+.filter-row div {
+    flex: 1; /* Each div will take equal width */
+}
+
+@media (max-width: 768px) {
+    /* For smaller screens, stack the inputs vertically */
+    .filter-row {
+        flex-direction: column;
+    }
+}
+
+
+/* Results Section */
+.results-section {
+    margin-top: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #003044;
+}
+
+.results-section h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Grid for Vehicle Cards */
+#results-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Vehicle Cards */
+.vehicle-card {
+    background-color: #003044;
+    color: #B6D3E3;
+    border: 2px solid #3A6275;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.vehicle-card img.vehicle-image {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.vehicle-card h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.vehicle-card p {
+    margin: 5px 0;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #003044;
+    color: #B6D3E3;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #B6D3E3;
+    font-weight: bold;
+}
+
+footer ul li a:hover {
+    color: #3A6275;
+}

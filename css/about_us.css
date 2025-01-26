@@ -1,0 +1,214 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #B6D3E3;
+    color: #BFBFBF;
+    text-align: center;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #3A6275;
+    color: black;
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Ensures the header stays at the top */
+    z-index: 1000; /* Keeps the header above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow for visibility */
+}
+
+
+header .logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #B6D3E3;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #B6D3E3;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #003044;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    border-color: #909090;
+    border-style:dashed;
+}
+
+
+
+/* About Us Section */
+.about-description {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #003044;
+    color: #B6D3E3;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.about-description h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about-description p {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Team Section */
+.team {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #B6D3E3;
+    color: #003044;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.team h3 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+/* Team Container Grid */
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+/* Individual Team Card */
+.team-card {
+    background-color: #003044;
+    color: #B6D3E3;
+    border: 2px solid #3A6275;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    max-width: 100%;
+}
+
+.team-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Team Photo */
+.team-photo {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+/* Team Member Name & Role */
+.team-card h4 {
+    margin: 10px 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.team-card p {
+    margin: 5px 0;
+    font-size: 1rem;
+    padding-bottom: 10px;
+}
+
+/* Social Links Styling */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #B6D3E3;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: white; /* Change color on hover */
+}
+
+.social-icon i {
+    transition: transform 0.2s ease;
+}
+
+.social-icon:hover i {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: #003044;
+    color: #B6D3E3;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 15px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #B6D3E3;
+    font-weight: bold;
+}
+
+footer ul li a:hover {
+    color: #3A6275;
+}
