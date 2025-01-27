@@ -109,7 +109,6 @@ main h3 {
     display: none; /* Hidden by default */
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.2rem;
-    display: grid;
     background-color: #003044;
     border: 2px solid #3A6275;
     padding: 15px;
@@ -225,7 +224,7 @@ main h3 {
 
 .vehicle-card h3 {
     margin: 10px 0;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #B6D3E3;
 }
 
