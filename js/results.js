@@ -23,18 +23,16 @@ const vehicleData = [
     type: "Hatchback",
     price: 487000,
     image: "images/car_images/hyundai_i10.png",
-    description:
-      "A compact SUV with great fuel economy and city driving comfort.",
+    description: "A compact car with great fuel economy and city comfort.",
     fuelType: "petrol",
     seatingCapacity: 5,
   },
   {
-    name: "Maruti suzuki Ertiga",
+    name: "Maruti Suzuki Ertiga",
     type: "SUV",
     price: 870000,
-    image: "images/car_images/Ertiga.png",
-    description:
-      "A compact SUV with great fuel economy and city driving comfort.",
+    image: "images/car_images/ertiga.png",
+    description: "A budget-friendly 7-seater SUV for family trips.",
     fuelType: "diesel",
     seatingCapacity: 7,
   },
@@ -43,7 +41,8 @@ const vehicleData = [
     type: "Luxury",
     price: 6000000,
     image: "images/car_images/bmw_5_series.png",
-    fuelType: "Diesel",
+    description: "A premium luxury sedan with top-notch comfort and power.",
+    fuelType: "diesel",
     seatingCapacity: 5,
   },
   {
@@ -51,7 +50,8 @@ const vehicleData = [
     type: "Luxury",
     price: 5500000,
     image: "images/car_images/audi_a6.png",
-    fuelType: "Petrol",
+    description: "A refined and powerful luxury sedan.",
+    fuelType: "petrol",
     seatingCapacity: 5,
   },
   {
@@ -59,7 +59,8 @@ const vehicleData = [
     type: "SUV",
     price: 7200000,
     image: "images/car_images/mercedes.png",
-    fuelType: "Diesel",
+    description: "A luxury SUV with advanced features and performance.",
+    fuelType: "diesel",
     seatingCapacity: 5,
   },
   {
@@ -67,7 +68,8 @@ const vehicleData = [
     type: "SUV",
     price: 999000,
     image: "images/car_images/tata_nexon.png",
-    fuelType: "Electric",
+    description: "An electric SUV with futuristic features.",
+    fuelType: "electric",
     seatingCapacity: 5,
   },
   {
@@ -75,7 +77,8 @@ const vehicleData = [
     type: "SUV",
     price: 1500000,
     image: "images/car_images/kia_seltos.png",
-    fuelType: "Petrol",
+    description: "A stylish SUV with modern tech.",
+    fuelType: "petrol",
     seatingCapacity: 5,
   },
   {
@@ -83,7 +86,8 @@ const vehicleData = [
     type: "SUV",
     price: 1650000,
     image: "images/car_images/hyundai_creta.png",
-    fuelType: "Diesel",
+    description: "A well-balanced compact SUV.",
+    fuelType: "diesel",
     seatingCapacity: 5,
   },
   {
@@ -91,7 +95,8 @@ const vehicleData = [
     type: "Hatchback",
     price: 550000,
     image: "images/car_images/maruti_suzuki_swift.png",
-    fuelType: "Petrol",
+    description: "A budget-friendly and fuel-efficient hatchback.",
+    fuelType: "petrol",
     seatingCapacity: 5,
   },
   {
@@ -99,7 +104,8 @@ const vehicleData = [
     type: "Sports",
     price: 7500000,
     image: "images/car_images/ford_mustang.png",
-    fuelType: "Petrol",
+    description: "An iconic American muscle car.",
+    fuelType: "petrol",
     seatingCapacity: 4,
   },
   {
@@ -107,7 +113,8 @@ const vehicleData = [
     type: "Sports",
     price: 13500000,
     image: "images/car_images/porsche_911.png",
-    fuelType: "Petrol",
+    description: "A high-performance sports car for enthusiasts.",
+    fuelType: "petrol",
     seatingCapacity: 2,
   },
   {
@@ -115,7 +122,8 @@ const vehicleData = [
     type: "Sports",
     price: 8000000,
     image: "images/car_images/chevrolet_camaro.png",
-    fuelType: "Petrol",
+    description: "A powerful muscle car with a bold design.",
+    fuelType: "petrol",
     seatingCapacity: 4,
   },
   {
@@ -123,7 +131,8 @@ const vehicleData = [
     type: "SUV",
     price: 2200000,
     image: "images/car_images/mahindra_xuv700.png",
-    fuelType: "Diesel",
+    description: "A tech-loaded SUV with superior safety features.",
+    fuelType: "diesel",
     seatingCapacity: 7,
   },
   {
@@ -131,7 +140,8 @@ const vehicleData = [
     type: "Hatchback",
     price: 650000,
     image: "images/car_images/volkswagen_polo.png",
-    fuelType: "Petrol",
+    description: "A reliable and premium hatchback.",
+    fuelType: "petrol",
     seatingCapacity: 5,
   },
 ];
@@ -139,59 +149,26 @@ const vehicleData = [
 // Get query parameters from URL
 const urlParams = new URLSearchParams(window.location.search);
 const priceRange = urlParams.get("priceRange");
-const fuelType = urlParams.get("fuelType");
-const carType = urlParams.get("carType");
+const fuelType = urlParams.get("fuelType")?.toLowerCase();
+const carType = urlParams.get("carType")?.toLowerCase();
 const seatingCapacity = urlParams.get("seatingCapacity");
 
 // Function to filter vehicles based on selected filters
 function filterVehicles() {
-  const filteredVehicles = vehicleData.filter((vehicle) => {
-    let matchesPrice = true;
-    let matchesFuel = true;
-    let matchesType = true;
-    let matchesSeats = true;
+  return vehicleData.filter((vehicle) => {
+    const matchesPrice =
+      !priceRange ||
+      (priceRange === "under-5-lakh" && vehicle.price < 500000) ||
+      (priceRange === "5-10-lakh" && vehicle.price >= 500000 && vehicle.price < 1000000) ||
+      (priceRange === "10-20-lakh" && vehicle.price >= 1000000 && vehicle.price < 2000000) ||
+      (priceRange === "above-20-lakh" && vehicle.price >= 2000000);
 
-    // Price Range Filter
-    if (priceRange) {
-      if (priceRange === "under-5-lakh" && vehicle.price >= 500000) {
-        matchesPrice = false;
-      } else if (
-        priceRange === "5-10-lakh" &&
-        (vehicle.price < 500000 || vehicle.price >= 1000000)
-      ) {
-        matchesPrice = false;
-      } else if (
-        priceRange === "10-20-lakh" &&
-        (vehicle.price < 1000000 || vehicle.price >= 2000000)
-      ) {
-        matchesPrice = false;
-      } else if (priceRange === "above-20-lakh" && vehicle.price < 2000000) {
-        matchesPrice = false;
-      }
-    }
-
-    // Fuel Type Filter
-    if (fuelType && vehicle.fuelType !== fuelType) {
-      matchesFuel = false;
-    }
-
-    // Car Type Filter
-    if (carType && vehicle.type.toLowerCase() !== carType.toLowerCase()) {
-      matchesType = false;
-    }
-
-    // Seating Capacity Filter
-    if (
-      seatingCapacity &&
-      vehicle.seatingCapacity !== parseInt(seatingCapacity)
-    ) {
-      matchesSeats = false;
-    }
+    const matchesFuel = !fuelType || vehicle.fuelType.toLowerCase() === fuelType;
+    const matchesType = !carType || vehicle.type.toLowerCase() === carType;
+    const matchesSeats = !seatingCapacity || vehicle.seatingCapacity === parseInt(seatingCapacity);
 
     return matchesPrice && matchesFuel && matchesType && matchesSeats;
   });
-
-  return filteredVehicles;
 }
 
 // Function to display filtered vehicles
@@ -201,8 +178,7 @@ function displayResults() {
   resultsContainer.innerHTML = "";
 
   if (filteredVehicles.length === 0) {
-    resultsContainer.innerHTML =
-      "<p>No vehicles found based on your filters.</p>";
+    resultsContainer.innerHTML = "<p>No vehicles found based on your filters.</p>";
     return;
   }
 
@@ -210,16 +186,14 @@ function displayResults() {
     const vehicleCard = document.createElement("div");
     vehicleCard.classList.add("vehicle-card");
     vehicleCard.innerHTML = `
-                    <img src="${vehicle.image}" alt="${
-      vehicle.name
-    }" class="vehicle-image">
-                    <h3>${vehicle.name}</h3>
-                    <p>Type: ${vehicle.type}</p>
-                    <p>Price: ₹${vehicle.price.toLocaleString()}</p>
-                    <p>Description: ${vehicle.description}</p>
-                    <p>Fuel Type: ${vehicle.fuelType}</p>
-                    <p>Seating Capacity: ${vehicle.seatingCapacity}</p>
-                `;
+      <img src="${vehicle.image || 'images/car_images/default_car.png'}" alt="${vehicle.name}" class="vehicle-image">
+      <h3>${vehicle.name}</h3>
+      <p>Type: ${vehicle.type}</p>
+      <p>Price: ₹${vehicle.price.toLocaleString()}</p>
+      <p>Description: ${vehicle.description || "No description available."}</p>
+      <p>Fuel Type: ${vehicle.fuelType}</p>
+      <p>Seating Capacity: ${vehicle.seatingCapacity}</p>
+    `;
     resultsContainer.appendChild(vehicleCard);
   });
 }
@@ -231,32 +205,12 @@ displayResults();
 document.getElementById("filterForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Get values from the form
-  const carType = document.getElementById("carType").value;
-  const seatingCapacity = document.getElementById("seatingCapacity").value;
-  const priceRange = document.getElementById("priceRange").value;
-  const fuelType = document.getElementById("fuelType").value;
-
-  // Update the URL with selected filters
-  const newParams = new URLSearchParams();
-  if (carType) newParams.set("carType", carType);
-  if (seatingCapacity) newParams.set("seatingCapacity", seatingCapacity);
-  if (priceRange) newParams.set("priceRange", priceRange);
-  if (fuelType) newParams.set("fuelType", fuelType);
-
-  // Redirect to the filtered URL
-  window.location.search = newParams.toString();
+  const newParams = new URLSearchParams(new FormData(this)).toString();
+  window.location.search = newParams;
 });
 
 // Function to toggle the visibility of the filter section
 function toggleFilter() {
   const filterSection = document.getElementById("filterSection");
-  if (
-    filterSection.style.display === "none" ||
-    filterSection.style.display === ""
-  ) {
-    filterSection.style.display = "block";
-  } else {
-    filterSection.style.display = "none";
-  }
+  filterSection.style.display = filterSection.style.display === "none" ? "block" : "none";
 }
