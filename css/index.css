@@ -263,3 +263,132 @@ footer ul li a {
 footer ul li a:hover {
   color: #3498db;
 }
+
+/* -------------------- Responsive Styles -------------------- */
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  header .logo {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul li {
+    margin: 0;
+  }
+
+  .hero {
+    padding: 60px 15px;
+    padding-bottom: 100px;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .hero img {
+    width: 120px;
+  }
+
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  .features h2 {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    gap: 20px;
+  }
+
+  .testimonials {
+    padding: 100px 15px;
+  }
+
+  .testimonials h2 {
+    font-size: 2rem;
+  }
+
+  .testimonial-container {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  footer ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer ul li {
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .features h2,
+  .testimonials h2 {
+    font-size: 1.8rem;
+  }
+
+  .feature-box h5 {
+    font-size: 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.8rem;
+  }
+
+  .cta-button,
+  .testimonial-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .logo img {
+    width: 40px;
+  }
+
+  header .logo h1 {
+    font-size: 2rem;
+  }
+}
