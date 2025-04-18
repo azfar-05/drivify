@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/drivify_logo_circular.png" type="image/png" />
+    <title>Drivify</title>
+    <link rel="stylesheet" href="css/results.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header id="">
+      <div class="logo">
+        <img src="images/drivify_logo.png" alt="Drivify" />
+        <h1>Drivify</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="#footer">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Edit Your Preferences:</h2>
+      <!-- Filter Section -->
+      <section class="button-container">
+        <button class="filter-toggle-button" onclick="toggleFilter()">
+          Filter Options
+        </button>
+        <button class="go-back-button" onclick="window.history.back()">
+          Go Back
+        </button>
+      </section>
+      <br />
+      <section class="filter-section" id="filterSection">
+        <h3>Filter Your Search</h3>
+        <form id="filterForm">
+          <div class="filter-row">
+            <div>
+              <label for="priceRange">Price Range:</label>
+              <select id="priceRange" name="priceRange">
+                <option value="">Select Price Range</option>
+                <option value="under-5-lakh">Under ₹5,00,000</option>
+                <option value="5-10-lakh">₹5,00,000 - ₹10,00,000</option>
+                <option value="10-20-lakh">₹10,00,000 - ₹20,00,000</option>
+                <option value="above-20-lakh">Above ₹20,00,000</option>
+              </select>
+            </div>
+            <div>
+              <label for="fuelType">Fuel Type:</label>
+              <select id="fuelType" name="fuelType">
+                <option value="">Select Fuel Type</option>
+                <option value="petrol">Petrol</option>
+                <option value="diesel">Diesel</option>
+                <option value="electric">Electric</option>
+                <option value="hybrid">Hybrid</option>
+              </select>
+            </div>
+            <div>
+              <label for="carType">Car Type:</label>
+              <select id="carType" name="carType">
+                <option value="">Select Car Type</option>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="MUV">MUV</option>
+                <option value="Pickup Truck">Pickup Truck</option>
+                <option value="Hatchback">Hatchback</option>
+                <option value="Luxury">Luxury</option>
+                <option value="Sports">Sports</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="seatingCapacity">Seating Capacity:</label>
+              <select id="seatingCapacity" name="seatingCapacity">
+                <option value="">Select Seating Capacity</option>
+                <option value="2">2 Seater</option>
+                <option value="4">4 Seater</option>
+                <option value="5">5 Seater</option>
+                <option value="7">7 Seater</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit">Apply Filters</button>
+          <button type="Reset">Reset</button>
+        </form>
+      </section>
+
+      <!-- Results Section -->
+      <section class="results-section">
+        <h2>Results based on your preferences:</h2>
+        <div id="results-container"></div>
+      </section>
+    </main>
+
+    <footer>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <p>&copy; 2025 Drivify. All rights reserved.</p>
+    </footer>
+    <script src="js/results.js"></script>
+  </body>
+</html>
