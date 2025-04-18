@@ -180,7 +180,7 @@ button:hover {
   color: #ffffff;
 }
 
-/* Ensure the form displays correctly on smaller screens */
+/* Responsive */
 @media (max-width: 768px) {
   .get-started form {
     grid-template-columns: 1fr;
@@ -188,5 +188,57 @@ button:hover {
 
   .form-submit {
     grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  header .logo h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul li {
+    margin-left: 0;
+  }
+
+  .get-started {
+    padding: 40px 20px;
+  }
+
+  .get-started h1 {
+    font-size: 2.2rem;
+  }
+
+  .get-started h2 {
+    font-size: 1.6rem;
+  }
+
+  .form-submit {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  footer ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer ul li {
+    margin: 0;
   }
 }
